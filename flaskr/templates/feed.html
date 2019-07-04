@@ -1,0 +1,17 @@
+<!doctype html>
+<title>9Gag RSS feed -- {{ name }}</title>
+
+<body>
+<a href="{{ link }}"><h1>{{ name }}</h1></a>
+<ul style="list-style-type:none;">
+  {% for item in items %}
+      <li>
+        <h4> {{ item.title }} </h4>
+        {% autoescape false %}
+        <div> {{ item.summary }} </div>
+        {% endautoescape %}
+      </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
