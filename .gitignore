@@ -1,0 +1,4 @@
+9gag-rss-venv/
+
+*.pyc
+__pycache__/
