@@ -1,0 +1,12 @@
+<!doctype html>
+<title>9Gag RSS feed</title>
+
+<body>
+<p> Click below to navigate to the designated RSS feed</p>
+<ul>
+  {% for feed in feeds %}
+      <li><a href="{{ feed['link'] }}">{{ feed['name'] }}</a></li>
+  {% endfor %}
+</ul>
+</body>
+</html>
