@@ -29,3 +29,10 @@ def get_rendered_template_for_feed(feed_id):
 def index():
     index_ctx = [{"name": feed["name"], "link": "/feed/"+str(id)} for id, feed in feeds.items()]
     return render_template('index.html', feeds=index_ctx)
+
+
+@app.route('/feed/<feed_id>', methods=['GET'])
+def render_feed(feed_id):
+    if feed_id not in feeds:
+        return abort(404)
+    return get_rendered_template_for_feed(feed_id)
